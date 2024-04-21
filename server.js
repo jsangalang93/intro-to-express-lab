@@ -84,20 +84,32 @@ const shoes = [
     { name: "Fifty-Inch Heels", price: 175, type: "heel" }
 ];
 
-const type = shoes[index].type
-const indexShoes = parseInt(req.params.index)
-
-
 app.get('/shoes/', (req, res) => {
-    console.log('this works');
-})
+    const index = parseInt(req.params.index)
+    let type = shoes [index].type
+    const name = shoes [index].name;
+    const price = shoes [index].price;
 
-//     for (let indexShoes = 0; index <= indexShoes.length; indexShoes++) {
-//         if(type = 'sandal'){
-//         console.log('this works');
-//         }
-//     }
-// });
+    // for (let index = 0; index <= index.length; index++) {
+
+    // const index = req.params.index
+    // const type = toString(shoes [index].type)
+    // const name = shoes [index].name
+    // const price = shoes [index].price
+    // const newArray =
+
+        if(type === "sandal") {
+        res.send (name)
+        res.send (price)
+        res.send (type)
+        }
+        
+    // }
+    console.log('this works');
+});
+
+
+
 
 app.listen(3000, () =>{
     console.log('listening on port 3000')
