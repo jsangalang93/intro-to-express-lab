@@ -84,11 +84,18 @@ const shoes = [
     { name: "Fifty-Inch Heels", price: 175, type: "heel" }
 ];
 
-app.get('/shoes/', (req, res) => {
-    const index = parseInt(req.params.index)
-    let type = shoes [index].type
-    const name = shoes [index].name;
-    const price = shoes [index].price;
+app.get('/shoes', (req, res) => {
+
+    const {index} = parseInt(req.params.index);
+    const {type} = shoes [index].type;
+    // const {name}  = shoes [index].name;
+    // const {price} = shoes [index].price;
+    // const minPrice = []
+    // const maxPrice = []
+    // const type = []
+
+    
+    
 
     // for (let index = 0; index <= index.length; index++) {
 
@@ -96,13 +103,13 @@ app.get('/shoes/', (req, res) => {
     // const type = toString(shoes [index].type)
     // const name = shoes [index].name
     // const price = shoes [index].price
-    // const newArray =
+    // const newArray = []
 
-        if(type === "sandal") {
-        res.send (name)
-        res.send (price)
-        res.send (type)
-        }
+    //     if(type === "sandal") {
+    //     res.send (name)
+    //     res.send (price)
+    //     res.send (type)
+    //     }
         
     // }
     console.log('this works');
