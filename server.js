@@ -73,7 +73,8 @@ app.get('/collectibles/:index', (req, res) => {
 // });
 
 // exercise 4
-
+app.get('/shoes/:type', (req, res) => {
+    
 const shoes = [
     { name: "Birkenstocks", price: 50, type: "sandal" },
     { name: "Air Jordans", price: 500, type: "sneaker" },
@@ -83,11 +84,24 @@ const shoes = [
     { name: "Jet Boots", price: 1000, type: "boot" },
     { name: "Fifty-Inch Heels", price: 175, type: "heel" }
 ];
+const parseInf = []    
+    shoes.forEach((shoe)=> {
+        if (shoe.type === req.params.type) {
+            parseInf.push(shoe);
+            console.log('parse inf works', shoe)
+            res.send(parseInf)
+            }  
+        })
+    });
 
-app.get('/shoes', (req, res) => {
 
-    const {index} = parseInt(req.params.index);
-    const {type} = shoes [index].type;
+
+
+
+// app.get('/shoes', (req, res) => {
+
+//     const {index} = parseInt(req.params.index);
+//     const {type} = shoes [index].type;
     // const {name}  = shoes [index].name;
     // const {price} = shoes [index].price;
     // const minPrice = []
@@ -95,8 +109,14 @@ app.get('/shoes', (req, res) => {
     // const type = []
 
     
-    
+    // const parseInf = []
+    // shoes.forEach((shoe)=> {
+    //     if (shoe.type === req.params.shoe.type) {
+    //         console.log("works");
+    //     }
+    // });
 
+    // console.log(parseInf);
     // for (let index = 0; index <= index.length; index++) {
 
     // const index = req.params.index
@@ -112,14 +132,12 @@ app.get('/shoes', (req, res) => {
     //     }
         
     // }
-    console.log('this works');
-});
+    // console.log('this works');
 
 
 
 
-app.listen(3000, () =>{
-    console.log('listening on port 3000')
+
+app.listen(3001, () =>{
+    console.log('listening on port 3001')
     });
-    
-    // res.send(shoes)
